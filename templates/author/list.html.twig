@@ -1,0 +1,31 @@
+{% set nbauthors=0 %}
+{% set nbbooks=0 %}
+{% if list is empty %}
+<p> no elements</p>
+{%else%}
+<table>
+<th> list of authors:</th>
+<tr>
+<td>id</td>
+<td>  pictures </td>
+<td> user name </td>
+<td>  email </td>
+<td> nb books </td>
+<td> link </td>
+</tr>
+{% for authors in list %} 
+{% set nbauthors= nbauthors+1 %}
+{%set nbbooks=nbbooks+authors.nb_books %}
+<tr>
+<td>{{authors.id}}</td>
+<td>  <img src="{{authors.picture}}"> </td>
+<td>{{authors.username|upper}}</td>
+<td>{{authors.email}}</td>
+<td>{{authors.nb_books}}</td>
+<td><a href="{{ path('author_Details',{'id': authors.id }) }}">{{'Details' }}</a></td>
+</tr>
+{% endfor %}
+</table>
+{%endif%}
+<h4> number of authors :{{nbauthors}}</h4>
+<h4> number of books :{{nbbooks}}</h4>

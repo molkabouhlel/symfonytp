@@ -1,0 +1,22 @@
+<h1> page show works ! </h1>
+{{t}}
+{% if tt is empty %}
+<p> no elements</p>
+{%else%}
+<table>
+<tr>
+<td>id</td>
+<td>  name of student</td>
+<td> number of class</td>
+</tr>
+{% for student in tt %} <-- boucle for-->
+<tr>
+<td>{{student.id}}</td>
+<td>{{student.name|upper}}</td>
+<td>{{student.nbclass}}</td>
+</tr>
+{% endfor %}
+</table>
+{%endif%}
+<img src="/images1/image1.png">
+<a href="/show

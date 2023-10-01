@@ -1,0 +1,21 @@
+<table>
+ <tr>
+ <td>id</td>
+<td>  pictures </td>
+<td> user name </td>
+<td>  email </td>
+<td> nb books </td>
+  </tr>
+  {% for authors in a %}
+  {% if id == authors.id %}
+    <tr>
+        <td> {{authors.id}} </td> 
+        <td>  <img src="{{authors.picture}}"> </td>
+        <td> {{authors.username|upper}}</td>
+        <td> {{authors.email}}</td>
+        <td> {{authors.nb_books}}</td>
+        </tr>
+
+    {%endif%}
+    {%endfor%}
+    </table>
